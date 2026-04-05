@@ -37,6 +37,16 @@ function prepararCanvas() {
 
 prepararCanvas();
 
+/**
+ * Implementación adaptada del algoritmo de Bresenham.
+ * Registra cada paso en un array para su posterior visualización en tabla.
+ * @param {number} x0 - Coordenada X inicial.
+ * @param {number} y0 - Coordenada Y inicial.
+ * @param {number} x1 - Coordenada X final.
+ * @param {number} y1 - Coordenada Y final.
+ * @param {CanvasRenderingContext2D} ctx - Contexto del canvas.
+ * @returns {Array} - Historial de pasos para la tabla.
+ */
 function bresenhamAdaptado(x0, y0, x1, y1, ctx) {
     let puntos = []; // Aquí guardaremos los pasos
     
