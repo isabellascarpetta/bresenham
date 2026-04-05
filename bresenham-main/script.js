@@ -68,3 +68,48 @@ function bresenhamAdaptado(x0, y0, x1, y1, ctx) {
     }
     return puntos;
 }
+
+function generarTabla(pasos) {
+    const contenedor = document.getElementById('tablaContenedor');
+    let html = `<table>
+                    <thead>
+                        <tr>
+                            Step</th>
+                            <th>X</th>
+                            <th>Y</th>
+                            <th>Error (err)</th>
+                        </tr>
+                    </thead>
+                    <tbody>`;
+
+    pasos.forEach((p, index) => {
+        html += `<tr>
+                    <td>${index}</td>
+                    <td>${p.x}</td>
+                    <td>${p.y}</td>
+                    <td>${p.error}</td>
+                 </tr>`;
+    });
+
+    html += '</tbody></table>';
+    contenedor.innerHTML = html;
+}
+
+
+function ejecutarAlgoritmo() {
+    //Obtener valores de los inputs
+    const x0 = parseInt(document.getElementById('x0').value);
+    const y0 = parseInt(document.getElementById('y0').value);
+    const x1 = parseInt(document.getElementById('x1').value);
+    const y1 = parseInt(document.getElementById('y1').value);
+
+    // Limpiar canvas
+    const { ctx } = prepararCanvas();
+
+    //Ejecutar algoritmo 
+    ctx.fillStyle = "red"; // Color de la línea
+    const pasos = bresenhamAdaptado(x0, y0, x1, y1, ctx);
+
+    // Mostrar tabla
+    generarTabla(pasos);
+}
