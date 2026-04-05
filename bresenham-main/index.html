@@ -1,1 +1,61 @@
-<h1>Titulo</h1>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo de Bresenham</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .controls { 
+            margin-bottom: 20px; 
+            border: 1px solid #ccc; 
+            padding: 15px; 
+            border-radius: 8px; 
+        }
+        canvas { 
+            border: 1px solid black; 
+            background-color: #f9f9f9; 
+        }
+        table {
+             border-collapse: collapse; 
+             margin-top: 20px; 
+             width: 80%; 
+            }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 8px; 
+            text-align: center; 
+        }
+        th { 
+            background-color: #4CAF50; 
+            color: white; 
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Generador de Líneas: Algoritmo de Bresenham</h2>
+
+    <div class="controls">
+        <label>x0: <input type="number" id="x0" value="10"></label>
+        <label>y0: <input type="number" id="y0" value="10"></label>
+        <br><br>
+        <label>x1: <input type="number" id="x1" value="100"></label>
+        <label>y1: <input type="number" id="y1" value="80"></label>
+        <br><br>
+        <button onclick="ejecutarAlgoritmo()">Trazar Línea</button>
+    </div>
+
+    <canvas id="canvasBresenham" width="500" height="500"></canvas>
+
+    <div id="tablaContenedor">
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
