@@ -135,11 +135,10 @@ function generarTabla(pasos) {
 
 
 function ejecutarAlgoritmo() {
-    //Obtener valores de los inputs
     const x0 = parseInt(document.getElementById('x0').value);
-    const y0 = parseInt(document.getElementById('y0').value);
+    const y0 = parseInt(document.getElementById('y0').value); 
     const x1 = parseInt(document.getElementById('x1').value);
-    const y1 = parseInt(document.getElementById('y1').value);
+    const y1 = parseInt(document.getElementById('y1').value); 
 
     // Limpiar canvas
     const { ctx } = prepararCanvas();
