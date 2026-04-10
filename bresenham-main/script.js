@@ -1,3 +1,5 @@
+// prueba git
+
 /**
  * Se dibuja una cuadrícula de fondo para mejor visualización.
  */
