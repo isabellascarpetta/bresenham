@@ -1,5 +1,3 @@
-// prueba git
-
 /**
  * Se dibuja una cuadrícula de fondo para mejor visualización.
  */
@@ -14,26 +12,29 @@ function dibujarCuadricula(ctx, width, height, paso = 25) {
     }
 
     for (let y = 0; y <= height; y += paso) {
-        ctx.moveTo(0, y);
+        ctx.moveTo(0,s y);
         ctx.lineTo(width, y);
     }
     ctx.stroke();
 }
-
+/**
+ * Se ajustó para x en horizontal e Y en vertical
+ */
 function dibujarEscalas(ctx, width, height, paso = 50) {
     ctx.strokeStyle = "#000";
     ctx.fillStyle = "#000";
     ctx.font = "10px Arial";
+    ctx.lineWidth = 1;
     ctx.beginPath();
 
-    // Eje Inferior (X)
+    // Eje X (Marcas en la parte inferior)
     for (let x = 0; x <= width; x += paso) {
         ctx.moveTo(x, height);
         ctx.lineTo(x, height - 10);
         ctx.fillText(x, x + 2, height - 2);
     }
 
-    // Eje Izquierdo (Y)
+    // Eje Y (Marcas en la parte izquierda)
     for (let y = 0; y <= height; y += paso) {
         ctx.moveTo(0, y);
         ctx.lineTo(10, y);
@@ -42,6 +43,7 @@ function dibujarEscalas(ctx, width, height, paso = 50) {
     
     ctx.stroke();
 }
+
 
 //limpia y prepara el canvas
 function prepararCanvas() {
