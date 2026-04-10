@@ -45,20 +45,24 @@ function dibujarEscalas(ctx, width, height, paso = 50) {
 }
 
 
-//limpia y prepara el canvas
+/**
+ * LLAMA A LA CUADRÍCULA Y A LAS ESCALAS
+ */
 function prepararCanvas() {
     const canvas = document.getElementById('canvasBresenham');
     const ctx = canvas.getContext('2d');
     
-    // Limpiar canvas
+    // Limpiar todo
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Dibujar las escalas
+    // Se dibuja fondo (cuadrícula)
+    dibujarCuadricula(ctx, canvas.width, canvas.height, 25);
+    
+    // Se dibuja ejes y números (escalas)
     dibujarEscalas(ctx, canvas.width, canvas.height, 50);
     
     return { ctx, canvas };
 }
-
 prepararCanvas();
 
 /**
