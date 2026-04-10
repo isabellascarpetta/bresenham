@@ -1,3 +1,23 @@
+/**
+ * Se dibuja una cuadrícula de fondo para mejor visualización.
+ */
+function dibujarCuadricula(ctx, width, height, paso = 25) {
+    ctx.strokeStyle = "#e0e0e0"; // Gris muy claro
+    ctx.lineWidth = 0.5;
+    ctx.beginPath();
+
+    for (let x = 0; x <= width; x += paso) {
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+    }
+
+    for (let y = 0; y <= height; y += paso) {
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+    }
+    ctx.stroke();
+}
+
 function dibujarEscalas(ctx, width, height, paso = 50) {
     ctx.strokeStyle = "#000";
     ctx.fillStyle = "#000";
